@@ -1,6 +1,7 @@
 # Simply a list of phrases that will randomly be chosen for the user to guess.
 
 from Caesar_Guesser import * 
+import random
 class Phrase():
     def __init__(self):
         self.phrases: list = ["A dime a dozen", "All in the same boat", "Barking up the wrong tree", "Beat around the bush", "Burning the candle at both ends",
@@ -28,5 +29,11 @@ class Phrase():
 
     def get_phrases(self) -> list:
         return self.phrases
+    
+    def get_hint(self, phrase) -> str:
+        split_phrase = phrase.split(' ')
+        hint_word = split_phrase[random.randint(0, len(split_phrase)-1)]
+        return hint_word
+
 
 

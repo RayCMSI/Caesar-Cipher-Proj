@@ -14,7 +14,6 @@ class Caesar_Guess():
         secret_phrase = random.choice(Phrase().get_phrases())
 
         cipher = Cipher().caesar_encoder(secret_phrase, random.randint(1,26))
-        hint_word = secret_phrase.split(' ')
 
         print('This is the ciphered phrase: ', cipher)
 
@@ -22,7 +21,7 @@ class Caesar_Guess():
             self.guess = input('Please Enter Your Geuss or Type "Hint" for a hint: ')
 
             if self.guess == 'Hint':
-                print('A word in the phrase is: ', hint_word[random.randint(0, len(hint_word)-1)])
+                print('A word in the phrase is: ', Phrase().get_hint(secret_phrase))
 
             if self.guess == secret_phrase:
                 print(f'You guessed the correct phrase: {secret_phrase}')
