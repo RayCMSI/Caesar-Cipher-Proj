@@ -22,9 +22,3 @@ class Cipher():
             org_word += chr((ord(letter) - base - self.shift) % 26 + base) if letter.isalpha() else letter
             
         return org_word
-
-if __name__ == '__main__':
-    ciph = Cipher()
-    encoded = ciph.caesar_encoder(input('Please Enter any Text: '), int(input('Now Please Enter a Number: ')))
-    print(encoded)
-    decoded = ciph.caesar_decoder
